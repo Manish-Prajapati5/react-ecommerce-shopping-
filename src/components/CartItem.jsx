@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCart } from '../context/CartContext'
-import { X } from 'lucide-react'
+import { IndianRupee, X } from 'lucide-react'
 
 const CartItem = ({ item }) => {
   const { addCart, removeCart } = useCart()
@@ -23,13 +23,19 @@ const CartItem = ({ item }) => {
       <div className='flex items-center justify-between sm:justify-end w-full sm:w-2/5 sm:mt-0 space-x-4'>
         <div className='flex items-center border border-gray-700 rounded-full overflow-hidden shadow-lg'>
           <button
-            onclick={() => decreasedQuantity}
+            onClick={() => decreasedQuantity()}
             className='p-2 text-gray-400 bg-gray-800 hover:bg-gray-700 transition duration-150 w-8 h-8 flex items-center justify-center'>-</button>
           <span>{item.quantity}</span>
           <button
-            onclick={() => increasedQuantity}
+            onClick={() => increasedQuantity()}
             className='p-2 text-gray-400 bg-gray-800 hover:bg-gray-700 transition duration-150 w-8 h-8 flex items-center justify-center'>+</button>
         </div>
+        <p className='flex items-center font-extrabold text-orange-300 w-24 text-right'><IndianRupee className='w-5 h-5' /><span>{(item.price * item.quantity).toFixed(2)}</span></p>
+        <button
+        onClick={()=>removeCart(item.id)}
+         className='p-3 bg-red-800/20 text-red-400 rounded-full hover:bg-red-800/40 transition duration-150 shadow-md'>
+          <X/>
+        </button>
       </div>
     </div>
   )
