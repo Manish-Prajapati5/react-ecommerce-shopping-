@@ -1,5 +1,7 @@
 import { createContext, useContext, useMemo, useState } from "react";
 import { initialProducts } from "../data/product";
+import { toast, Bounce } from 'react-toastify'
+
 
 const CartContext = createContext();
 
@@ -10,6 +12,17 @@ export const CartProvider = ({ children }) => {
 
   // add item into cart 
   const addCart = (product) => {
+    toast.success('Item added to cart', {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
     setCart((prevCart) => {
       const existingItem = prevCart?.find((item) => item.id === product.id);
       if (existingItem) {
@@ -26,6 +39,17 @@ export const CartProvider = ({ children }) => {
 
   // Remove item into cart 
   const removeCart = (productId, removeAll = false) => {
+     toast.error('Item remove from cart', {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
     setCart((prevCart) => {
       const existingItem = prevCart?.find((item) => item.id === productId);
       if (!existingItem) return prevCart;

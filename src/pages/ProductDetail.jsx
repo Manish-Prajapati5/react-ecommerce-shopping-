@@ -1,4 +1,4 @@
-import { Backpack, ChevronLeft, ShoppingCart, SkipBack, StepBack, Tag, Zap } from 'lucide-react'
+import { ChevronLeft, ShoppingCart, Tag, Zap } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { initialProducts } from '../data/product'

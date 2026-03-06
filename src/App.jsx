@@ -6,11 +6,25 @@ import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { ToastContainer ,Bounce} from 'react-toastify'
 
 const App = () => {
   return (
     <>
       <Router>
+        <ToastContainer
+          position="top-right"
+          autoClose={1500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
         <div className='min-h-screen bg-gray-950/95 text-white  font-sans'>
           <Navbar />
 

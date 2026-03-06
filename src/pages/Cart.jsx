@@ -44,7 +44,6 @@ const Cart = () => {
             </div>
             <Link to={'/checkout'}>
               <button
-                onClick={() => addCart(product)}
                 className=" w-full mt-8 py-4 bg-orange-600 text-white text-xl font-bold rounded-full shadow-lg shadow-orange-800/50 cursor-pointer hover:bg-orange-700 transition duration-300 space-x-2 flex items-center justify-center transform hover:ring-4 hover:ring-pink-600/50 uppercase tracking-wider">
                 <Zap className="w-5 h-5" />
                 <span> Proceed Securely</span>
